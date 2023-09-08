@@ -1,27 +1,33 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.table-title {
+  color: #333; 
+  text-align: center; 
+  font-size: 24px; 
+  margin-bottom: 10px; 
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.table-header {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.table-row {
+  border-bottom: 1px solid #ddd;
 }
 
-#container a {
-  text-decoration: none;
+ion-label {
+  text-align: left; 
+  padding: 5px;
+}
+
+ion-button {
+  margin-right: 5px;
+}
+
+/* Estilos para alinear la lista de productos a la izquierda */
+ion-list {
+  text-align: left; /* Alinea la lista a la izquierda */
 }

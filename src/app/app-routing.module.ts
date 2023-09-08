@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'modal-link-me',
+    loadChildren: () => import('./Components/modal-link-me/modal-link-me.module').then( m => m.ModalLinkMePageModule)
+  },
+  {
+    path: 'modal-delete',
+    loadChildren: () => import('./Components/modal-delete/modal-delete.module').then( m => m.ModalDeletePageModule)
+  },
 ];
 
 @NgModule({

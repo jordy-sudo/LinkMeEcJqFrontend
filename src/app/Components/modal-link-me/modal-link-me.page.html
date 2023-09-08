@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ action === 'create' ? 'Crear Producto' : 'Editar Producto' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="product"> <!-- Verificar que product no sea undefined -->
+  <ion-item>
+    <ion-label>UPC</ion-label>
+    <ion-input [(ngModel)]="product.upc"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Nombre del Producto</ion-label>
+    <ion-input [(ngModel)]="product.prodName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fabricante</ion-label>
+    <ion-input [(ngModel)]="product.mfgr"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Modelo</ion-label>
+    <ion-input [(ngModel)]="product.model"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Precio por Unidad</ion-label>
+    <ion-input type="number" [(ngModel)]="product.unitListPrice"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Unidades en Stock</ion-label>
+    <ion-input type="number" [(ngModel)]="product.unitInStock"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="saveChanges()" expand="full" color="primary">
+    {{ action === 'create' ? 'Crear Producto' : 'Guardar Cambios' }}
+  </ion-button>
+</ion-content>

@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title class="table-title">
+      Lista de Productos
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCreateModal()" color="success">
+        <ion-icon slot="start" name="add"></ion-icon>
+        Crear Producto
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item class="table-header">
+      <ion-label>Nombre del Producto</ion-label>
+      <ion-label>Modelo</ion-label>
+      <ion-label>Fabricante</ion-label>
+      <ion-label>UPC</ion-label>
+      <ion-label>Precio por Unidad</ion-label>
+      <ion-label>Unidades en Stock</ion-label>
+      <ion-label>Acciones</ion-label>
+    </ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-item *ngFor="let product of products" class="table-row">
+      <ion-label>{{ product.prodName }}</ion-label>
+      <ion-label>{{ product.model }}</ion-label>
+      <ion-label>{{ product.mfgr }}</ion-label>
+      <ion-label>{{ product.upc }}</ion-label>
+      <ion-label>{{ product.unitListPrice }}</ion-label>
+      <ion-label>{{ product.unitInStock }}</ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="openEditModal(product)" color="primary">Editar</ion-button>
+        <ion-button (click)="openDeleteModal(product)" color="danger">Eliminar</ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
 </ion-content>
